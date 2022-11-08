@@ -3,11 +3,12 @@
   "id": "BigAcc",
   "name": "BigAcc",
   "author": "Raz0rBeam",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "big acc",
-  "gameVersion": "1.24.1",
+  "gameVersion": "1.25.1",
   "dependsOn": {
     "BSIPA": "^4.2.2"
+
   },
   "features": []
 }
