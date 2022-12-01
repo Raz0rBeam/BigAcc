@@ -1,6 +1,9 @@
 ﻿using IPA;
-using UnityEngine;
+using BigAcc.Installers;
 using IPALogger = IPA.Logging.Logger;
+using IPA.Config;
+using IPA.Config.Stores;
+using BigAcc.Configuration;
 using SiraUtil.Zenject;
 
 namespace BigAcc
@@ -12,18 +15,15 @@ namespace BigAcc
         internal static IPALogger Log { get; private set; }
 
         [Init]
-        /// <summary>
-        /// Called when the plugin is first loaded by IPA (either when the game starts or when the plugin is enabled if it starts disabled).
-        /// [Init] methods that use a Constructor or called before regular methods like InitWithConfig.
-        /// Only use [Init] with one Constructor.
-        /// </summary>
-        public void Init(IPALogger logger, Zenjector zenject)
+        public void Init(IPALogger logger, Zenjector zenject, Config conf)
         {
             Instance = this;
             Log = logger;
             Log.Info("BigAcc initialized.");
+            PluginConfig.Instance = conf.Generated<PluginConfig>();
 
             zenject.Install<BAInstaller>(Location.StandardPlayer);
+            zenject.Install<BAUIInstaller>(Location.Menu);
 
             #region Yippee!
             Log.Info("Yippee!");

@@ -1,0 +1,14 @@
+﻿<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+	<horizontal horizontal-fit="PreferredSize" vertical-fit="PreferredSize" pad="2" anchor-pos-y="-40">
+		<text id="version-text" text='~version-text-value' color='#AEE3A6AA'/>
+	</horizontal>
+
+  <horizontal preferred-width="100" preferred-height="58" pad-top="8">
+    <vertical horizontal-fit="PreferredSize" vertical-fit="PreferredSize" background="round-rect-panel" background-color="#FFFFFFFAA" pad="3">
+      <bool-setting value="enable" apply-on-change="true" text="Enable Mod"/>
+      <bool-setting value="move-to-platform" apply-on-change="true" text="Move to Platform" hover-hint="for the love of god keep this on (or just scale the ACC in small increments)" interactable="~enable"/>
+      <slider-setting value='scale' integer-only='false' min='0' max='5' apply-on-change='true' text='Acc Scale' hover-hint='0 is default size' increment='0.25' show-buttons='true' interactable='~enable'/>
+      <slider-setting value='offset' integer-only ='false' min='0' max='5' apply-on-change='true' text='Acc Offset' hover-hint='move it back and forth' increment='0.25' show-buttons='true' interactable='~enable'/>
+    </vertical>
+  </horizontal>
+</bg>

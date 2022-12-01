@@ -1,7 +1,7 @@
 ﻿using System;
 using Zenject;
 
-namespace BigAcc
+namespace BigAcc.Installers
 {
     class BAInstaller : Installer
     {

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
@@ -40,6 +41,12 @@
     <DisableZipRelease>True</DisableZipRelease>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BSML">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Plugins\BSML.dll</HintPath>
+    </Reference>
+    <Reference Include="Hive.Versioning">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Libs\Hive.Versioning.dll</HintPath>
+    </Reference>
     <Reference Include="SiraUtil">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Beat Saber\Plugins\SiraUtil.dll</HintPath>
     </Reference>
@@ -106,11 +113,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Installer\BAInstaller.cs" />
+    <Compile Include="Installers\BAInstaller.cs" />
+    <Compile Include="Installers\BAUIInstaller.cs" />
+    <Compile Include="Managers\MenuButtonManager.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\PluginConfig.cs" />
-    <Compile Include="BigAccController.cs" />
+    <Compile Include="Controllers\BigAccController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FlowCoordinator.cs" />
+    <Compile Include="UI\MainView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
@@ -119,6 +130,9 @@
     <None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
     <None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')" />
     <None Include="BigAcc.csproj.user" Condition="Exists('BigAcc.csproj.user')" />
+    <EmbeddedResource Include="UI\MainView.bsml">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BeatSaberModdingTools.Tasks">
@@ -127,5 +141,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
