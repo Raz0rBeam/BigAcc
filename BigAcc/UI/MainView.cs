@@ -12,8 +12,10 @@ using HMUI;
 
 namespace BigAcc.UI
 {
-    [HotReload(RelativePathToLayout = @"MainView.bsml")]
-    [ViewDefinition("BigAcc.UI.MainView.bsml")]
+    //This file implements the UI values, and assigns properties to the config file (BigAcc/Configuration/PluginConfig.cs)
+
+    [HotReload(RelativePathToLayout = @"Main.bsml")]
+    [ViewDefinition("BigAcc.UI.Main.bsml")]
     internal class MainView : BSMLAutomaticViewController
     {
         PluginConfig config = PluginConfig.Instance;

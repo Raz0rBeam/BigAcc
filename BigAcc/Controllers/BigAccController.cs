@@ -16,7 +16,7 @@ namespace BigAcc
         public GameObject RankText = GameObject.Find("ImmediateRankText");
         private PluginConfig config = PluginConfig.Instance;
         
-
+        // Moving the accuracy UI component to the specified area according to the config.
         public void Initialize()
         {
             float scale = config.AccSize * 2;

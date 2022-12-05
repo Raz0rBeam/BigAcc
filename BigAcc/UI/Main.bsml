@@ -1,7 +1,7 @@
 ﻿<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
-	<horizontal horizontal-fit="PreferredSize" vertical-fit="PreferredSize" pad="2" anchor-pos-y="-40">
-		<text id="version-text" text='~version-text-value' color='#AEE3A6AA'/>
-	</horizontal>
+  <horizontal horizontal-fit="PreferredSize" vertical-fit="PreferredSize" pad="2" anchor-pos-y="-40">
+    <text id="version-text" text='~version-text-value' color='#AEE3A6AA'/>
+  </horizontal>
 
   <horizontal preferred-width="100" preferred-height="58" pad-top="8">
     <vertical horizontal-fit="PreferredSize" vertical-fit="PreferredSize" background="round-rect-panel" background-color="#FFFFFFFAA" pad="3">

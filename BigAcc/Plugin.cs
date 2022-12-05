@@ -21,11 +21,13 @@ namespace BigAcc
             Log = logger;
             Log.Info("BigAcc initialized.");
             PluginConfig.Instance = conf.Generated<PluginConfig>();
-
+            
+            // call to install the files to run in the menu and ingame
             zenject.Install<BAInstaller>(Location.StandardPlayer);
             zenject.Install<BAUIInstaller>(Location.Menu);
 
             #region Yippee!
+            // this can be ignored, does absolutely nothing of use to the mod but add something to the logs
             Log.Info("Yippee!");
             Log.Info("Yippee!");
             Log.Info("Yippee!");
