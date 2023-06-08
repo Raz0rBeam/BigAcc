@@ -5,6 +5,7 @@ using Zenject;
 using UnityEngine;
 using IPA.Loader;
 using BigAcc.Configuration;
+using BigAcc.Installers;
 
 namespace BigAcc
 {
@@ -21,11 +22,10 @@ namespace BigAcc
         {
             float scale = config.AccSize * 2;
             float negativeScale = (scale - (scale * 2)) * 10;
-
             float offset = config.AccOffset * 2.5f;
 
-            if (config.EnableMod == true)
-            {
+             if (config.EnableMod == true && BAInstaller.isAdvancedHUD == true)
+             {
                 if (IsNoodleMap(difficultyBeatmap) == false)
                 {
                     bigAcc.transform.name = "Big Acc";
@@ -45,11 +45,12 @@ namespace BigAcc
                     {
                         var RankText = GameObject.Find("ImmediateRankText");
                         RankText.transform.localPosition = new Vector3(RankText.transform.localPosition.x, negativeScale - 1, RankText.transform.localPosition.z);
-                    } 
+                    }
                 }
-            }
-              
+             }
+
         }
+
         internal BigAccController(IDifficultyBeatmap _difficultyBeatmap)
         {
             difficultyBeatmap = _difficultyBeatmap;

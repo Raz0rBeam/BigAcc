@@ -5,6 +5,8 @@ using IPA.Config;
 using IPA.Config.Stores;
 using BigAcc.Configuration;
 using SiraUtil.Zenject;
+using System.Reflection;
+using IPA.Loader;
 
 namespace BigAcc
 {
@@ -13,6 +15,8 @@ namespace BigAcc
     {
         internal static Plugin Instance { get; private set; }
         internal static IPALogger Log { get; private set; }
+        public static bool isAdvancedHUD;
+        public static string HUDText;
 
         [Init]
         public void Init(IPALogger logger, Zenjector zenject, Config conf)
